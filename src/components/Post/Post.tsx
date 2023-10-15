@@ -6,10 +6,10 @@ export const Post = memo(({id, title, description, createdAt}: Props) => {
   return (
       <PostContainer>
         <Title>{title}</Title>
-        <Description>{description}</Description>
         <DateContainer dateTime={createdAt.toLocaleDateString()}>
-          {createdAt.toLocaleDateString()}
+          published on {createdAt.toLocaleDateString()}
         </DateContainer>
+        <Description>{description}</Description>
       </PostContainer>
   );
 })

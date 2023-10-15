@@ -1,9 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import {posts} from './data/mock-data';
 import {PostsList} from "./components";
 import {useState} from 'react';
+import {MainContainer, Title} from "./app.styled";
 
 function App() {
   const [data, setData] = useState(posts);
@@ -12,10 +11,11 @@ function App() {
     setData(rest);
   }
   return (
-    <div>
-      <button onClick={removeSecondPost}>remove 2nd post</button>
+    <MainContainer>
+      {/*<button onClick={removeSecondPost}>remove 2nd post</button>*/}
+      <Title>Articles</Title>
       <PostsList data={posts} />
-    </div>
+    </MainContainer>
   );
 }
 
