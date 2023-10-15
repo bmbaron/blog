@@ -1,24 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {posts} from './data/mock-data';
+import {PostsList} from "./components";
+import {useState} from 'react';
 
 function App() {
+  const [data, setData] = useState(posts);
+  const removeSecondPost = () => {
+    const [firstPost, ...rest] = data;
+    setData(rest);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={removeSecondPost}>remove 2nd post</button>
+      <PostsList data={posts} />
     </div>
   );
 }
