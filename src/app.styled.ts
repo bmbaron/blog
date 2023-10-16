@@ -10,8 +10,9 @@ export const MainContainer = styled('div')`
 `
 
 export const Title = styled('h1')`
-  margin: 30px auto auto auto;
-  @media only screen and (min-width: 600px) {
-    font-size: 50px;
+  margin: 80px auto;
+  font-size: 45px;
+  @media only screen and (min-width: 500px) {
+    font-size: 70px;
   }
 `
